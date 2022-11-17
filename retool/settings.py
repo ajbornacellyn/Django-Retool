@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--z!+dd&2*x__r1ia8e+-kuk&zcqa74$25eo!jbtab+-!t73l(q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://django-retool-production.up.railway.app']
 
 
 # Application definition
