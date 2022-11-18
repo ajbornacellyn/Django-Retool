@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
 ]
-CORS_ORIGIN_ALLOW_ALL = True
 
 
 ROOT_URLCONF = 'retool.urls'
@@ -137,7 +136,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 
 #SMTP Configuration
