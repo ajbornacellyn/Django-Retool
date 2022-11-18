@@ -56,7 +56,7 @@ class encargado(models.Model):
 
 
 class mantenimiento(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True, null=True, blank=True)
     placa = models.ForeignKey(Carro, on_delete=models.CASCADE)
     encargado = models.ForeignKey(encargado, on_delete = models.CASCADE, null=True, blank=True)
     descripcion = models.CharField(max_length=500, null= True, blank= True)
