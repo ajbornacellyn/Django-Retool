@@ -67,13 +67,7 @@ class ManteinanceView(APIView):
             cars = Carro.objects.filter(placa=request.data['placa'])
             if len(cars) > 0:
                 auto = Carro.objects.get(placa=request.data['placa'])
-                # hacer el autoinrementable
-                serializer.save(placa=auto)
-                idMant = 1
-                mantenimientos = mantenimiento.objects.all()
-                if len(mantenimientos) > 0:
-                    idMant = mantenimiento.objects.last().id + 1
-                mantenimiento.objects.create(id=idMant, placa= auto, descripcion=request.data['descripcion'], kilometraje=request.data['kilometraje'], estado=request.data['estado'], servicio=request.data['servicio'], fecha = request.data['fecha'], costo = request.data['costo'])
+                mantenimiento.objects.create( placa= auto, descripcion=request.data['descripcion'], kilometraje=request.data['kilometraje'], estado=request.data['estado'], servicio=request.data['servicio'], fecha = request.data['fecha'], costo = request.data['costo'])
                 return  Response({"message": "Maintenance created successfully"})
             else:
                 return Response("Car not found")
