@@ -38,7 +38,7 @@ class RegisterView(APIView):
             return Response({"message": "Username already exists"})
         else:
             if serializer.is_valid(raise_exception=True):
-                User.objects.create_user(username=request.data['username'], password=request.data['password'])
+                User.objects.create_user(username=request.data['username'], password=request.data['password'], email=request.data['email'])
                 return  Response({"message": "User created successfully"})
 
             
